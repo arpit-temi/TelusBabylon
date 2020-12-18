@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayout"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:background="@color/telus"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/telusButton"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_margin="20dp"
+            android:background="@drawable/telus"
+            app:shapeAppearanceOverlay="@style/roundedImageView" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"
+            android:layout_gravity="center"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:fontFamily="@font/days_one_regular"
+                android:gravity="center"
+                android:textColor="@color/telus"
+                android:text="Keeping you connected during Covid"
+                android:textSize="55sp"
+                android:textStyle="bold"
+                android:marqueeRepeatLimit="marquee_forever"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.temi.babylon.utils.FullScreenVideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+
+        </com.temi.babylon.utils.FullScreenVideoView>
+
+    </FrameLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
